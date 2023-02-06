@@ -1,0 +1,42 @@
+.operating {
+    padding: 50px 30px; /* faire  general */
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+        .operating-list {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+            article {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                background-color: $bg-section;
+                padding: 30px 30px;
+                gap: 20px;
+                border-radius: 20px;
+                box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+                transition: 0.3s; /* faire box-shadow general */
+            }
+
+                span {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background: $color-primary;
+                    border-radius: 50%;
+                    border: 2px solid $color-primary;
+                    width: 25px;
+                    height: 25px;
+                    position: absolute;
+                    left: 15px;
+                    color: $color-white; /* faire fonction calcul couleur si sombre mettre blanc */
+                }
+
+                    i {
+                        color: $color-icon;
+                        font-size: 20px;
+                    }
+}

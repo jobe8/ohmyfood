@@ -1,0 +1,27 @@
+@import "../utils/variables";
+
+footer {
+    background-color: $bg-footer;
+    padding: 30px; /* faire padding général */
+    color: $color-white; /* faire fonction pour si bg est sombre mettre couleur blanc comme dans cours oc */
+
+    .logo-footer {
+        margin-bottom: 20px;
+    }
+
+        .footer-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+            .icon-info{
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+
+                .hands i {
+                    font-size: 12px;
+                }
+}
