@@ -2,7 +2,7 @@
 
 footer {
     background-color: $bg-footer;
-    padding: 30px; /* faire padding général */
+    padding: 30px; 
     color: $color-white; /* faire fonction pour si bg est sombre mettre couleur blanc comme dans cours oc */
 
     .logo-footer {
@@ -15,7 +15,7 @@ footer {
             gap: 10px;
         }
 
-            .icon-info{
+            .icon-item {
                 display: flex;
                 align-items: center;
                 gap: 10px;
