@@ -6,3 +6,7 @@
 @mixin padding-block {
     padding: 50px 30px;
 }
+
+@mixin gradient {
+    background: linear-gradient($color-secondary, $color-primary);
+}

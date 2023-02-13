@@ -1,0 +1,23 @@
+@mixin big-button {
+    padding: 15px 10px;
+    width: 200px;
+    border-radius: 30px;
+    @include shadow;
+    @include gradient;    
+    color: $color-white;
+    font-size: 15px;
+}
+
+@mixin btn-like {
+    font-size: 25px;
+    background-color: transparent;
+}
+
+@mixin btn-check {
+    background-color: $color-tertiary;
+    color: $color-white;
+    width: 50px;
+    border-radius: 0 10px 10px 0 ;
+    font-size: 20px;
+    margin-right: -50px;
+}

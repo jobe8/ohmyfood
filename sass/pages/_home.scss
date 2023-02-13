@@ -1,0 +1,119 @@
+.location {
+    display: flex;
+    justify-content: center;
+    background-color: $bg-location;
+    gap: 10px;
+    padding: 15px 0;
+}
+
+.presentation {
+    @include padding-block;
+    text-align: center;
+    background-color: $bg-section;
+    
+    h1 {
+        margin-bottom: 10px;
+    }
+
+    p {
+        margin-bottom: 30px;
+    }
+
+    button {
+        @include big-button;
+    }
+}
+
+.operatings {
+    @include padding-block;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+        &__list {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+            article {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                background-color: $bg-section;
+                padding: 30px 30px;
+                gap: 20px;
+                border-radius: 20px;
+                @include shadow;
+            }
+
+                span {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background: $color-primary;
+                    border-radius: 50%;
+                    border: 2px solid $color-primary;
+                    width: 25px;
+                    height: 25px;
+                    position: absolute;
+                    left: 15px;
+                    color: $color-white; /* faire fonction calcul couleur si sombre mettre blanc */
+                }
+
+                    i {
+                        color: $color-icon;
+                        font-size: 20px;
+                    }
+}
+
+.restaurants {
+    background-color: $bg-section;
+    @include padding-block;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+        article {
+            @include shadow;
+            border-radius: 20px;
+            gap: 20px;
+        }
+
+            .img-restaurant {
+                position: relative;
+            }
+
+                img {
+                    height: 175px;
+                    width: 100%;
+                    border-radius: 20px 20px 0 0;
+                }
+
+                .new {
+                    color: darken($color-tertiary, 50%);
+                    background-color: $color-tertiary;
+                    padding: 9px 12px;
+                    position: absolute;
+                    top: 15px;
+                    right: 16px;
+                    border-radius: 5px;
+                }
+
+                 .description {
+                     padding: 15px; /* créer map pour padding générar voir cours */
+                     display: flex;
+                     justify-content: space-between;
+                 }
+
+                     .btn-like {
+                         font-size: 25px;
+                         background-color: transparent;
+                     }
+
+}

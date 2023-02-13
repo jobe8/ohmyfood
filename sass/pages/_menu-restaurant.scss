@@ -1,6 +1,17 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__logo {
+        flex-grow: 1;
+        text-align: center;
+    }
+}
+
 .cover {
     width: 100%;
-    height: 25vh;
+    height: 30vh;
     padding: 0;
 }
 
@@ -10,14 +21,78 @@
     border-radius: 30px 30px 0 0;
     background-color: $color-white;
     padding: 30px 20px;
+    background-color: $bg-section;
+}
 
+.heading {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
 
-    &__header {
-        display: flex;
-        justify-content: space-between;
+        &__btn {
+            padding-right: 20px;
+            @include btn-like;
+        }
+}
+
+.menu-content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.menu-group__title {
+    margin-bottom: 10px;
+
+    &:after {
+        content: "";
+        display: block; 
+        width: 40px;
+        padding-top: 2px;
+        border-bottom: 4px solid $color-tertiary;
     }
 }
 
-.submenu {
-    
+.list-item {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    @include shadow;
+    overflow: hidden; /* check button */
+    border-radius: 10px;
+
+    &__left {
+        padding: 10px;
+    }
+
+    .menu-item__right {
+        display: flex;
+        gap: 10px;
+    }
+
+    &__price {
+        display: flex;
+        align-items: flex-end;
+        padding: 10px;
+        font-weight: bold;
+    }
+
+    &__check {
+        @include btn-check;
+    }
+}
+
+.btn-order {
+    text-align: center;
+    margin-bottom: 10px;
+
+    button {
+        @include big-button;
+    }
 }
