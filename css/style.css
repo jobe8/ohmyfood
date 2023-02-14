@@ -282,8 +282,14 @@ footer .hands i {
 }
 .menu-item__left {
   padding: 10px;
+  min-width: 0;
 }
-.menu-item .menu-item__right {
+.menu-item__name {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.menu-item__right {
   display: flex;
   gap: 10px;
 }
