@@ -20,7 +20,7 @@
     }
 
     button {
-        @include big-button;
+        @include main-button;
     }
 }
 
@@ -57,7 +57,7 @@
                     height: 25px;
                     position: absolute;
                     left: 15px;
-                    color: $color-white; /* faire fonction calcul couleur si sombre mettre blanc */
+                    color: $color-white;
                 }
 
                     i {
