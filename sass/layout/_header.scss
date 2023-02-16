@@ -1,7 +1,24 @@
 .navbar {
   text-align: center;
-  padding: 15px 20px; /* faire padding général */
+  padding: 15px 20px;
   @include shadow;       
   position: relative; /* for shadow bottom */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__logo {
+      flex-grow: 1;
+      text-align: center;
+  }
+
+  &__arrow {
+    font-size: 20px;
+    transition: 0.5s;
+
+    &:hover {
+        transform: scale(1.3);
+    }
+  }
 }
 
