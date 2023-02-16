@@ -96,25 +96,11 @@
     &__check {
         @include btn-check;
         transition: 0.5s;
-        
     }
 
     &:hover .menu-item__check {
         margin-right: 0;
-
-        @keyframes rotate {
-            0%{
-                transform: rotate(0deg);
-            }
-            
-            100%{
-                transform: rotate(360deg);
-            }
-        }
-
-        i {
-            animation: rotate 0.5s ease-in;
-        }
+        @include rotate;
     }
 }
 

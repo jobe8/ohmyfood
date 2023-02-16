@@ -1,0 +1,51 @@
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    inset: 0;
+    z-index: 99;
+    opacity: 0.9;
+    background-color: $color-white;
+    animation: fade;
+    animation-duration: 0s;
+    animation-delay: 3s;
+    animation-fill-mode: forwards; // prevent an animated element from resetting visually after the animation finishes
+
+    &__letter {
+        font-size: 50px;
+        // @include delay(animation, 8, 0.1s);
+        animation: bounce;
+        animation-duration: 1.3s;
+        animation-iteration-count: infinite;
+      }
+      
+      // increase the animation delay by 0.1s for the next letter (&__letter:nth-child(..))
+      @for $i from 1 to 9 {
+        .loader__letter:nth-child(#{$i}) { animation-delay: $i * 0.1s; }
+      }
+
+      @keyframes bounce {
+        0% {
+            transform: translateY(0px)
+        }
+        40% {
+            transform: translateY(-40px);
+        }
+        100% {
+            transform: translateY(0px);
+        }
+    }
+
+    @keyframes fade {
+        from {
+            opacity:1;
+            display: block;
+        }
+        to {
+            opacity:0;
+            z-index:-100;
+            display:none;
+        }
+    }
+}

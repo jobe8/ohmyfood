@@ -35,6 +35,5 @@ button {
      &:focus {
          background-color: $color-white;
          color: $color-tertiary;
-         @include btn-check;
      }
 }
