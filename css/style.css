@@ -30,102 +30,6 @@ img {
   font-family: Roboto, sans-serif;
 }
 
-.loader {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  gap: 30px;
-  inset: 0;
-  z-index: 99;
-  opacity: 0.9;
-  background-color: #ffffff;
-  animation: fade;
-  animation-duration: 0s;
-  animation-delay: 3s;
-  animation-fill-mode: forwards;
-}
-@keyframes fade {
-  from {
-    opacity: 1;
-    display: block;
-  }
-  to {
-    opacity: 0;
-    z-index: -100;
-    display: none;
-  }
-}
-.loader .loader-logo {
-  display: flex;
-}
-.loader__letter {
-  font-size: 50px;
-  animation: bounce;
-  animation-duration: 3s;
-  animation-iteration-count: infinite;
-}
-.loader .loader__letter:nth-child(1) {
-  animation-delay: 0.1s;
-}
-.loader .loader__letter:nth-child(2) {
-  animation-delay: 0.2s;
-}
-.loader .loader__letter:nth-child(3) {
-  animation-delay: 0.3s;
-}
-.loader .loader__letter:nth-child(4) {
-  animation-delay: 0.4s;
-}
-.loader .loader__letter:nth-child(5) {
-  animation-delay: 0.5s;
-}
-.loader .loader__letter:nth-child(6) {
-  animation-delay: 0.6s;
-}
-.loader .loader__letter:nth-child(7) {
-  animation-delay: 0.7s;
-}
-.loader .loader__letter:nth-child(8) {
-  animation-delay: 0.8s;
-}
-@keyframes bounce {
-  0% {
-    transform: translateY(0px);
-  }
-  40% {
-    transform: translateY(-40px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
-}
-.loader__spinner {
-  animation: rotate 1s infinite linear;
-  position: relative;
-  border-radius: 50%;
-  background: white;
-  background-image: linear-gradient(25deg, #9356DC 10%, transparent 60%), linear-gradient(50deg, #FF79DA 10%, transparent 60%);
-  width: 80px;
-  height: 80px;
-}
-.loader__spinner:after {
-  border-radius: 50%;
-  content: "";
-  display: block;
-  position: relative;
-  margin: 10px auto;
-  width: 60px;
-  height: 60px;
-  background: white;
-}
-@keyframes rotate {
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
 button {
   border: none;
   cursor: pointer;
@@ -157,23 +61,43 @@ button {
 footer {
   background-color: #353535;
   padding: 30px;
-  color: #ffffff; /* faire fonction pour si bg est sombre mettre couleur blanc comme dans cours oc */
+  color: #ffffff;
+  /* faire fonction pour si bg est sombre mettre couleur blanc comme dans cours oc */
+}
+@media (min-width: 769px) {
+  footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
 footer .logo-footer {
   margin-bottom: 20px;
 }
 footer .footer-list {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   gap: 10px;
 }
-footer .icon-item {
+@media (min-width: 769px) {
+  footer .footer-list {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+  }
+}
+footer .footer-list__item {
+  display: flex;
+}
+footer .footer-list__item:hover {
+  color: #FF79DA;
+}
+footer .footer-list__icon-item {
   display: flex;
   align-items: center;
   gap: 10px;
 }
-footer .hands i {
-  font-size: 12px;
+footer .footer-list .hands i {
+  font-size: 11px;
 }
 
 .location {
@@ -186,6 +110,10 @@ footer .hands i {
 
 .presentation {
   padding: 50px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   background-color: #F7F7F7;
 }
@@ -212,18 +140,22 @@ footer .hands i {
   filter: drop-shadow(0 6px 8px rgba(0, 0, 0, 0.3));
 }
 
-.operatings {
+.operating {
   padding: 50px 30px;
   display: flex;
   flex-direction: column;
   gap: 30px;
 }
-.operatings__list {
-  display: flex;
-  flex-direction: column;
+.operating__list {
+  display: grid;
   gap: 30px;
 }
-.operatings article {
+@media (min-width: 769px) {
+  .operating__list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.operating article {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -233,8 +165,9 @@ footer .hands i {
   border-radius: 20px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
+  position: relative;
 }
-.operatings span {
+.operating span {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -244,10 +177,10 @@ footer .hands i {
   width: 25px;
   height: 25px;
   position: absolute;
-  left: 15px;
+  left: -15px;
   color: #ffffff;
 }
-.operatings i {
+.operating i {
   color: #6b6b6b;
   font-size: 20px;
 }
@@ -260,25 +193,33 @@ footer .hands i {
   gap: 30px;
 }
 .restaurants__list {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   gap: 20px;
 }
-.restaurants article {
+@media (min-width: 769px) {
+  .restaurants__list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   border-radius: 20px;
   gap: 20px;
 }
-.restaurants .img-restaurant {
+
+.img-restaurant {
   position: relative;
 }
-.restaurants img {
+
+img {
   height: 175px;
   width: 100%;
   border-radius: 20px 20px 0 0;
 }
-.restaurants .new {
+
+.new {
   color: #1b6150;
   background-color: #99E2D0;
   padding: 9px 12px;
@@ -287,14 +228,30 @@ footer .hands i {
   right: 16px;
   border-radius: 5px;
 }
-.restaurants .description {
+
+.description {
   padding: 15px;
+  position: relative;
   display: flex;
   justify-content: space-between;
 }
-.restaurants .btn-like {
+.description i {
   font-size: 25px;
-  background-color: transparent;
+  position: absolute;
+  top: 15px;
+  right: 30px;
+}
+.description .fa-solid {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(#FF79DA, #9356DC);
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+.description .fa-solid:hover {
+  opacity: 1;
+  transform: scale(1.2);
 }
 
 .cover {
@@ -307,25 +264,44 @@ footer .hands i {
   position: relative;
   margin-top: -30px;
   border-radius: 30px 30px 0 0;
-  padding: 30px 20px;
+  padding: 30px 15px;
   background-color: #F7F7F7;
 }
 
 .heading {
   display: flex;
   justify-content: space-between;
+  gap: 10px;
   margin-bottom: 30px;
 }
-.heading__heart {
-  margin-right: 25px;
+.heading__button i {
   font-size: 25px;
+  position: absolute;
+  top: 30px;
+  right: 50px;
+}
+.heading__button .fa-solid {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(#FF79DA, #9356DC);
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+.heading__button .fa-solid:hover {
+  opacity: 1;
+  transform: scale(1.2);
 }
 
 .menu-content {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   gap: 30px;
   margin-bottom: 40px;
+}
+@media (min-width: 769px) {
+  .menu-content {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .menu-group__title {

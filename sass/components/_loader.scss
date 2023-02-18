@@ -1,94 +1,94 @@
-.loader {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    gap: 30px;
-    inset: 0;
-    z-index: 99;
-    opacity: 0.9;
-    background-color: $color-white;
-    animation: fade;
-    animation-duration: 0s;
-    animation-delay: 3s;
-    animation-fill-mode: forwards;
+// .loader {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: center;
+//     position: fixed;
+//     gap: 30px;
+//     inset: 0;
+//     z-index: 99;
+//     opacity: 0.9;
+//     background-color: $color-white;
+//     animation: fade;
+//     animation-duration: 0s;
+//     animation-delay: 3s;
+//     animation-fill-mode: forwards;
 
-    @keyframes fade {
-        from {
-            opacity:1;
-            display: block;
-        }
-        to {
-            opacity:0;
-            z-index:-100;
-            display:none;
-        }
-    }
+//     @keyframes fade {
+//         from {
+//             opacity:1;
+//             display: block;
+//         }
+//         to {
+//             opacity:0;
+//             z-index:-100;
+//             display:none;
+//         }
+//     }
 
-    .loader-logo {
-        display: flex;   
-    }
+//     .loader-logo {
+//         display: flex;   
+//     }
 
-    &__letter {
-        font-size: 50px;
-        animation: bounce;
-        animation-duration: 3s;
-        animation-iteration-count: infinite;
-    }
+//     &__letter {
+//         font-size: 50px;
+//         animation: bounce;
+//         animation-duration: 3s;
+//         animation-iteration-count: infinite;
+//     }
 
-    // increase the animation delay by 0.1s for the next letter (&__letter:nth-child(..))
-    @for $i from 1 to 9 {
-        .loader__letter:nth-child(#{$i}) { animation-delay: $i * 0.1s; }
-    }
+//     // increase the animation delay by 0.1s for the next letter (&__letter:nth-child(..))
+//     @for $i from 1 to 9 {
+//         .loader__letter:nth-child(#{$i}) { animation-delay: $i * 0.1s; }
+//     }
 
-    @keyframes bounce {
-        0% {
-            transform: translateY(0px)
-        }
-        40% {
-            transform: translateY(-40px);
-        }
-        100% {
-            transform: translateY(0px);
-        }
-    }
+//     @keyframes bounce {
+//         0% {
+//             transform: translateY(0px)
+//         }
+//         40% {
+//             transform: translateY(-40px);
+//         }
+//         100% {
+//             transform: translateY(0px);
+//         }
+//     }
     
-    &__spinner {
-        animation: rotate 1s infinite linear;
-        position: relative;
-        border-radius: 50%;
-        background: white;
-        background-image: 
-        linear-gradient(
-            25deg,
-            $color-primary 10%,
-            transparent 60%
-        ),
-        linear-gradient(
-            50deg,
-            $color-secondary 10%,
-            transparent 60%
-        )
-        ;
-        width: 80px;
-        height: 80px;
+//     &__spinner {
+//         animation: rotate 1.5s infinite linear;
+//         position: relative;
+//         border-radius: 50%;
+//         background: white;
+//         background-image: 
+//         linear-gradient(
+//             25deg,
+//             $color-primary 10%,
+//             transparent 60%
+//         ),
+//         linear-gradient(
+//             50deg,
+//             $color-secondary 10%,
+//             transparent 60%
+//         )
+//         ;
+//         width: 80px;
+//         height: 80px;
         
-        &:after {
-        border-radius: 50%;
-        content: '';
-        display: block;
-        position: relative;
-        margin: 10px auto;
-        width: 60px;
-        height: 60px;
-        background: white;
-        }
-    }
+//         &:after {
+//         border-radius: 50%;
+//         content: '';
+//         display: block;
+//         position: relative;
+//         margin: 10px auto;
+//         width: 60px;
+//         height: 60px;
+//         background: white;
+//         }
+//     }
     
-    @keyframes rotate {
-        100% {
-        transform: rotate(360deg);
-        }
-    }
-}
+//     @keyframes rotate {
+//         100% {
+//         transform: rotate(360deg);
+//         }
+//     }
+// }

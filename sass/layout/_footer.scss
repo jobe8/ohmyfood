@@ -3,25 +3,41 @@
 footer {
     background-color: $bg-footer;
     padding: 30px; 
-    color: $color-white; /* faire fonction pour si bg est sombre mettre couleur blanc comme dans cours oc */
+    color: $color-white;
+    @media (min-width: 769px) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    } /* faire fonction pour si bg est sombre mettre couleur blanc comme dans cours oc */
 
     .logo-footer {
         margin-bottom: 20px;
     }
 
         .footer-list {
-            display: flex;
-            flex-direction: column;
+            display: grid;
             gap: 10px;
-        }
-
-            .icon-item {
-                display: flex;
-                align-items: center;
-                gap: 10px;
+            @media (min-width: 769px) {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 40px;
             }
 
-                .hands i {
-                    font-size: 12px;
+            &__item {
+                display: flex;
+                &:hover {
+                    color: $color-secondary;
                 }
+            }
+
+                &__icon-item {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                }
+
+                .hands i {
+                    font-size: 11px;
+                }
+        }
 }
