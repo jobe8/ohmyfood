@@ -15,16 +15,12 @@
     text-align: center;
     background-color: $bg-section;
     
-    h1 {
+    &__title {
         margin-bottom: 10px;
     }
 
-    p {
+    &__paragraph {
         margin-bottom: 30px;
-    }
-
-    button {
-        @include main-button;
     }
 }
 
@@ -39,12 +35,13 @@
     &__list {
         display: grid;
         gap: 30px;
-        @media (min-width: 769px) {
+        @include tablet {
             grid-template-columns: repeat(3, 1fr);
         }
     }
 
     article {
+        position: relative;
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -53,7 +50,6 @@
         gap: 20px;
         border-radius: 20px;
         @include shadow;
-        position: relative;
     }
 
     span {
@@ -85,18 +81,18 @@
 
     &__list {
         display: grid;
-        @media (min-width: 769px) {
+        gap: 20px;
+        @include tablet {
             grid-template-columns: repeat(2, 1fr);
         }
-        gap: 20px;
     }
 
 }
 
 .card {
-    @include shadow;
     border-radius: 20px;
     gap: 20px;
+    @include shadow;
 }
 
 .img-restaurant {
@@ -120,10 +116,14 @@ img {
 }
 
 .description {
-padding: 15px;
-position: relative; 
-display: flex;
-justify-content: space-between;
-                // ($top, $right)
- @include btn-like(15px, 30px);
+    padding: 15px;
+    position: relative; 
+    display: flex;
+    justify-content: space-between;
+
+    &__btn {
+        position: absolute;
+        top: 15px;
+        right: 50px;
+    }
 }

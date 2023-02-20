@@ -4,7 +4,7 @@ button {
     background-color: transparent;
   }
 
-@mixin main-button {
+.main-btn {
     padding: 15px 10px;
     width: 200px;
     border-radius: 30px;
@@ -20,14 +20,11 @@ button {
     }
 }
 
-@mixin btn-like($top, $right) {
+.btn-like {
     i {
         font-size: 25px;
         position: absolute;
-        top: $top;
-        right: $right;
     }
-
     .fa-solid {
         background-clip: text;
         -webkit-background-clip: text;
@@ -42,13 +39,14 @@ button {
     }
 }
 
-@mixin btn-check {
+.btn-check {
     background-color: $color-tertiary;
     color: $color-white;
     width: 60px;
     border-radius: 0 10px 10px 0;
     font-size: 25px;
     margin-right: -60px;
+    transition: 0.5s;
     
      &:focus {
          background-color: $color-white;

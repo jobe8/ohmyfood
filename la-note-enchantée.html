@@ -14,7 +14,7 @@
         <!-- HEADER -->
         <header>
             <nav class="navbar">
-                <a href="../index.html">
+                <a href="./index.html">
                     <i class="navbar__arrow fa-solid fa-arrow-left"></i>
                 </a>
                 <h1 class="logo navbar__logo">ohmyfood</h1>
@@ -23,20 +23,26 @@
 
         <!-- MAIN -->
         <main>
-            <img class="cover" src="../images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" alt="image menu la note enchantée">
+            <!-- COVER SECTION -->
+            <section>
+                <img class="cover" src="../images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" alt="image menu la note enchantée">
+            </section>
+            <!-- MENU SECTION -->
             <section class="menu">
+                <!-- HEADING MENU -->
                 <div class="heading">
                     <h1 class="heading__title">La note enchantée</h1>
-                    <button class="heading__button">
+                    <button class="heading__button btn-like">
                         <i class="fa-regular fa-heart"></i>
                         <i class="fa-solid fa-heart"></i>
                     </button>
                 </div>
-
+                <!-- MENU CONTENT -->
                 <div class="menu-content"> 
+                    <!-- STARTER -->
                     <div class="menu-group">
                         <h4 class="menu-group__title">ENTRÉES</h4>
-                        <div class="list-item">
+                        <div class="list-item animation-card animation-starter">
                             <article class="menu-item">
                                 <div class="menu-item__left">
                                     <h3 class="menu-item__name">Ravioles de foie gras</h3>
@@ -44,12 +50,11 @@
                                 </div>
                                 <div class="menu-item__right">
                                     <span class="menu-item__price">25€</span>
-                                    <button class="menu-item__check">
+                                    <button class="menu-item__check btn-check">
                                         <i class="fa-sharp fa-solid fa-circle-check"></i>
                                     </button>
                                 </div>
                             </article>
-
                             <article class="menu-item">
                                 <div class="menu-item__left">
                                     <h3 class="menu-item__name">Caviar osciètre</h3>
@@ -57,12 +62,11 @@
                                 </div>
                                 <div class="menu-item__right">
                                     <span class="menu-item__price">35€</span>
-                                    <button class="menu-item__check">
+                                    <button class="menu-item__check btn-check">
                                         <i class="fa-sharp fa-solid fa-circle-check"></i>
                                     </button>
                                 </div>
                             </article>
-
                             <article class="menu-item">
                                 <div class="menu-item__left">
                                     <h3 class="menu-item__name">Homard et espuma de potiron</h3>
@@ -70,12 +74,11 @@
                                 </div>
                                 <div class="menu-item__right">
                                     <span class="menu-item__price">20€</span>
-                                    <button class="menu-item__check">
+                                    <button class="menu-item__check btn-check">
                                         <i class="fa-sharp fa-solid fa-circle-check"></i>
                                     </button>
                                 </div>
                             </article>
-
                             <article class="menu-item">
                                 <div class="menu-item__left">
                                     <h3 class="menu-item__name">Foie gras de canard cuit entier</h3>
@@ -83,17 +86,17 @@
                                 </div>
                                 <div class="menu-item__right">
                                     <span class="menu-item__price">35€</span>
-                                    <button class="menu-item__check">
+                                    <button class="menu-item__check btn-check">
                                         <i class="fa-sharp fa-solid fa-circle-check"></i>
                                     </button>
                                 </div>
                             </article>
                         </div>
                     </div>
-
+                    <!-- DISH -->
                     <div class="menu-group">
                         <h4 class="menu-group__title">PLATS</h4>
-                        <div class="list-item">
+                        <div class="list-item animation-card animation-dish">
                             <article class="menu-item">
                                 <div class="menu-item__left">
                                     <h3 class="menu-item__name">Noix de coquilles Saint-Jacques</h3>
@@ -101,12 +104,11 @@
                                 </div>
                                 <div class="menu-item__right">
                                     <span class="menu-item__price">40€</span>
-                                    <button class="menu-item__check">
+                                    <button class="menu-item__check btn-check">
                                         <i class="fa-sharp fa-solid fa-circle-check"></i>
                                     </button>
                                 </div>
                             </article>
-
                             <article class="menu-item">
                                 <div class="menu-item__left">
                                     <h3 class="menu-item__name">Langoustine poêlée</h3>
@@ -114,12 +116,11 @@
                                 </div>
                                 <div class="menu-item__right">
                                     <span class="menu-item__price">35€</span>
-                                    <button class="menu-item__check">
+                                    <button class="menu-item__check btn-check">
                                         <i class="fa-sharp fa-solid fa-circle-check"></i>
                                     </button>
                                 </div>
                             </article>
-
                             <article class="menu-item">
                                 <div class="menu-item__left">
                                     <h3 class="menu-item__name">Mijoté de queue de boeuf </h3>
@@ -127,17 +128,17 @@
                                 </div>
                                 <div class="menu-item__right">
                                     <span class="menu-item__price">44€</span>
-                                    <button class="menu-item__check">
+                                    <button class="menu-item__check btn-check">
                                         <i class="fa-sharp fa-solid fa-circle-check"></i>
                                     </button>
                                 </div>
                             </article>
                         </div>
                     </div>
-
+                    <!-- DESSERT -->
                     <div class="menu-group">
                         <h4 class="menu-group__title">DESSERTS</h4>
-                        <div class="list-item">
+                        <div class="list-item animation-card animation-dessert">
                             <article class="menu-item">
                                 <div class="menu-item__left">
                                     <h3 class="menu-item__name">Macaron noisette et chocolat</h3>
@@ -145,12 +146,11 @@
                                 </div>
                                 <div class="menu-item__right">
                                     <span class="menu-item__price">18€</span>
-                                    <button class="menu-item__check">
+                                    <button class="menu-item__check btn-check">
                                         <i class="fa-sharp fa-solid fa-circle-check"></i>
                                     </button>
                                 </div>
                             </article>
-
                             <article class="menu-item">
                                 <div class="menu-item__left">
                                     <h3 class="menu-item__name">Baba au rhum revisité</h3>
@@ -158,12 +158,11 @@
                                 </div>
                                 <div class="menu-item__right">
                                     <span class="menu-item__price">22€</span>
-                                    <button class="menu-item__check">
+                                    <button class="menu-item__check btn-check">
                                         <i class="fa-sharp fa-solid fa-circle-check"></i>
                                     </button>
                                 </div>
                             </article>
-
                             <article class="menu-item">
                                 <div class="menu-item__left">
                                     <h3 class="menu-item__name">Tarte au citron meringuée</h3>
@@ -171,7 +170,7 @@
                                 </div>
                                 <div class="menu-item__right">
                                     <span class="menu-item__price">23€</span>
-                                    <button class="menu-item__check">
+                                    <button class="menu-item__check btn-check">
                                         <i class="fa-sharp fa-solid fa-circle-check"></i>
                                     </button>
                                 </div>
@@ -179,11 +178,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="btn-order">
-                    <button>Commander</button>
+                <div class="order">
+                    <button class="main-btn">Commander</button>
                 </div>
             </section>
-                
         </main>
 
         <!-- FOOTER -->
