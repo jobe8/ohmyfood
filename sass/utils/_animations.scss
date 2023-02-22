@@ -15,35 +15,31 @@
     }
 }
 
+
 // animation appear cards page menu
-.animation-card {
+.menu-group {
     animation-name: appear;
-    animation-duration: 1000ms;
-    animation-fill-mode: backwards;
+    animation-duration: 2000ms;
+    animation-fill-mode: both;
 }
 
-.animation-starter {
-    animation-delay: .25s;
-}
-
-.animation-dish {
-    animation-delay: .5s;
-}
-
-.animation-dessert {
-    animation-delay: .75s;
+@for $i from 1 through 3 {
+    .menu-group:nth-child(#{$i}){
+        animation-delay: $i * 0.5s;
+    }
 }
 
 @keyframes appear {
-    from {
-        transform: translateY(-100px);
+    0% {
+        transform: translateY(-50px);
         opacity: 0;
     }
-    to {
+    100% {
         opacity: 1;
         transform: translateY(0);
     }
 }
+
 
 // hover img menu card
 @mixin img-zoom {
@@ -52,6 +48,7 @@
             transform: scale(1.1);
         }
 }
+
 
 // hover scale element 
 @mixin hover-scale {
@@ -62,6 +59,8 @@
         }
 }
 
+
+// hover main btn
 @mixin hover-main-btn {
     transition: 0.5s;
     &:hover {
@@ -74,6 +73,8 @@
     }
 }
 
+
+// hover card menu
 @mixin hover-card {
     &:hover {
         box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2);
