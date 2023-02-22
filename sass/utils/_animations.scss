@@ -15,7 +15,7 @@
     }
 }
 
-// animation cards page menu
+// animation appear cards page menu
 .animation-card {
     animation-name: appear;
     animation-duration: 1000ms;
@@ -45,3 +45,37 @@
     }
 }
 
+// hover img menu card
+@mixin img-zoom {
+    transition: 1s;
+        &:hover {
+            transform: scale(1.1);
+        }
+}
+
+// hover scale element 
+@mixin hover-scale {
+    transition: 0.5s ease-in-out;
+        &:hover {
+            opacity: 1;
+            transform: scale(1.2);
+        }
+}
+
+@mixin hover-main-btn {
+    transition: 0.5s;
+    &:hover {
+        transform: scale(1.1);
+        background: linear-gradient(
+            lighten(($color-secondary), 5%) 0%,
+            lighten(($color-primary), 5%) 100%
+        );
+        filter: drop-shadow(0 6px 8px rgba(0,0,0,0.3));
+    }
+}
+
+@mixin hover-card {
+    &:hover {
+        box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2);
+    }
+}

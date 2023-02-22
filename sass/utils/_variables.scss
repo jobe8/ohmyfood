@@ -8,4 +8,9 @@ $bg-footer: #353535;
 $color-icon: #6b6b6b;
 $color-black : #000000;
 $color-white : #ffffff;
-$color-hover: #f3e7ff 
+
+$breakpoints:
+(
+    tablet: 769px,
+    desktop: 1025px
+);

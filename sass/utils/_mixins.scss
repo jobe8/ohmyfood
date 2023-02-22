@@ -5,9 +5,27 @@
 
 @mixin padding-block {
     padding: 50px 30px;
+    @include tablet {
+        padding: 50px 80px;
+    }
+
 }
 
 @mixin gradient {
     background: linear-gradient($color-secondary, $color-primary);
+}
+
+@mixin tablet 
+{
+    @media screen and (min-width: map-get($breakpoints, tablet)) {
+        @content;
+    }
+}
+
+@mixin desktop
+{
+    @media screen and (min-width: map-get($breakpoints, desktop)) {
+        @content;
+    }
 }
 

@@ -173,7 +173,7 @@ button {
 }
 .main-btn:hover {
   transform: scale(1.1);
-  opacity: 0.8;
+  background: linear-gradient(#ff93e1 0%, #a16be0 100%);
   filter: drop-shadow(0 6px 8px rgba(0, 0, 0, 0.3));
 }
 
@@ -187,7 +187,7 @@ button {
   color: transparent;
   background-image: linear-gradient(#FF79DA, #9356DC);
   opacity: 0;
-  transition: all 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
 }
 .btn-like .fa-solid:hover {
   opacity: 1;
@@ -226,13 +226,15 @@ button {
 .navbar__logo {
   flex-grow: 1;
   text-align: center;
+  font-size: 30px;
 }
 .navbar__arrow {
   font-size: 20px;
-  transition: 0.5s;
+  transition: 0.5s ease-in-out;
 }
 .navbar__arrow:hover {
-  transform: scale(1.3);
+  opacity: 1;
+  transform: scale(1.2);
 }
 
 footer {
@@ -298,6 +300,11 @@ footer .footer-list .hands i {
   text-align: center;
   background-color: #F7F7F7;
 }
+@media screen and (min-width: 769px) {
+  .presentation {
+    padding: 50px 80px;
+  }
+}
 .presentation__title {
   margin-bottom: 10px;
 }
@@ -310,6 +317,11 @@ footer .footer-list .hands i {
   display: flex;
   flex-direction: column;
   gap: 30px;
+}
+@media screen and (min-width: 769px) {
+  .operating {
+    padding: 50px 80px;
+  }
 }
 .operating__list {
   display: grid;
@@ -357,6 +369,11 @@ footer .footer-list .hands i {
   flex-direction: column;
   gap: 30px;
 }
+@media screen and (min-width: 769px) {
+  .restaurants {
+    padding: 50px 80px;
+  }
+}
 .restaurants__list {
   display: grid;
   gap: 20px;
@@ -373,15 +390,22 @@ footer .footer-list .hands i {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
 }
+.card:hover {
+  box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2);
+}
 
 .img-restaurant {
   position: relative;
+  overflow: hidden;
 }
-
-img {
+.img-restaurant img {
   height: 175px;
   width: 100%;
   border-radius: 20px 20px 0 0;
+  transition: 1s;
+}
+.img-restaurant img:hover {
+  transform: scale(1.1);
 }
 
 .new {
@@ -422,7 +446,12 @@ img {
 }
 @media screen and (min-width: 769px) {
   .menu {
-    padding: 30px 50px; /* maps others blocs */
+    padding: 50px 30px;
+  }
+}
+@media screen and (min-width: 769px) and (min-width: 769px) {
+  .menu {
+    padding: 50px 80px;
   }
 }
 
@@ -434,7 +463,7 @@ img {
   margin-bottom: 30px;
 }
 .heading i {
-  top: 30px;
+  top: 35px;
   right: 50px;
 }
 @media screen and (min-width: 769px) {

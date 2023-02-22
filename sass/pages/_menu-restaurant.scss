@@ -12,7 +12,7 @@
     padding: 30px 15px;
     background-color: $bg-section;
     @include tablet {
-        padding: 30px 50px; /* maps others blocs */
+        @include padding-block;
     }
 }
 
@@ -25,7 +25,7 @@
 
     // btn-like
     i {
-        top: 30px;
+        top: 35px;
         right: 50px;
         @include tablet {
             right: 80px;
