@@ -14,7 +14,15 @@ button {
     background: $color-gradient;    
     color: $color-white;
     font-size: 15px;
-    @include hover-main-btn;
+    transition: 0.5s;
+    &:hover {
+        transform: scale(1.1);
+        background: linear-gradient(
+            lighten(($color-secondary), 5%) 0%,
+            lighten(($color-primary), 5%) 100%
+        );
+        filter: drop-shadow(0 6px 8px rgba(0,0,0,0.3));
+    }
 }
 
 // BTN LIKE
@@ -29,7 +37,11 @@ button {
         color: transparent;
         background-image: $color-gradient;
         opacity: 0;
-        @include hover-scale;
+        transition: 0.5s ease-in-out;
+        &:hover {
+            opacity: 1;  // mixin ou map
+            transform: scale(1.2);
+        }
     }
 }
 

@@ -8,24 +8,17 @@
     @include tablet {
         padding: 50px 80px;
     }
-
 }
 
 @mixin gradient {
     background: linear-gradient($color-secondary, $color-primary);
 }
-
-@mixin tablet 
-{
-    @media screen and (min-width: map-get($breakpoints, tablet)) {
-        @content;
+    
+    
+@mixin for-delay ($number1, $number2, $delay){
+    @for $i from $number1 through $number2 {
+        :nth-child(#{$i}){
+            animation-delay: $i * $delay; 
+        }
     }
 }
-
-@mixin desktop
-{
-    @media screen and (min-width: map-get($breakpoints, desktop)) {
-        @content;
-    }
-}
-

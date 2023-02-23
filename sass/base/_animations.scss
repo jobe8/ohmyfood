@@ -1,0 +1,57 @@
+// menu group appear in layout menu-restaurant
+@keyframes appear {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+// btn check hover rotate in layout menu-restaurant
+@keyframes rotate {
+    0%{
+        transform: rotate(0deg);
+    }
+    
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+
+// loader fade after animation
+@keyframes fade {
+    from {
+        opacity:1;
+        display: block;
+    }
+    to {
+        opacity:0;
+        z-index:-100;
+        display:none;
+    }
+}
+
+// loader logo jump letter
+@keyframes bounce {
+    0% {
+        transform: translateY(0px)
+    }
+    40% {
+        transform: translateY(-40px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+// loader-spinner animation
+@keyframes spin {
+    100% {
+    transform: spin(360deg);
+    }
+}

@@ -37,9 +37,14 @@
     display: grid;
     gap: 30px;
     margin-bottom: 40px;
+    @include for-delay (1, 3, 0.5s); // appear animation delay for each menu-group
     @include desktop {
         grid-template-columns: repeat(3, 1fr);
     }
+}
+
+.menu-group {
+    animation: appear 1500ms both;
 }
 
 .menu-group__title {
@@ -66,7 +71,7 @@
     border-radius: 10px;
     background-color: $color-white;
     @include shadow;
-    
+
     &__left {
         padding: 10px;
         min-width: 0;
@@ -95,7 +100,9 @@
 
     &:hover .menu-item__check {
         margin-right: 0;
-        @include rotate;
+        i {
+            animation: rotate 0.5s ease-in;
+        }
     }
 }
 

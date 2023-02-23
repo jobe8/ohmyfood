@@ -11,14 +11,18 @@
   }
 
   &__logo {
-      flex-grow: 1;
-      text-align: center;
-      font-size: 30px;
+    flex-grow: 1;
+    text-align: center;
+    font-size: 30px;
   }
 
   &__arrow {
     font-size: 20px;
-    @include hover-scale;
+    transition: 0.5s ease-in-out;
+    &:hover {
+      opacity: 1;     // mixin ou map
+      transform: scale(1.2);
+    }
   }
 }
 

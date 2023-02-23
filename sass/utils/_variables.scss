@@ -2,15 +2,11 @@ $color-primary: #9356DC;
 $color-secondary: #FF79DA;
 $color-gradient: linear-gradient($color-secondary, $color-primary);
 $color-tertiary: #99E2D0;
+
 $bg-location: #e5e5e5;
 $bg-section: #F7F7F7;
 $bg-footer: #353535;
+
 $color-icon: #6b6b6b;
 $color-black : #000000;
 $color-white : #ffffff;
-
-$breakpoints:
-(
-    tablet: 769px,
-    desktop: 1025px
-);

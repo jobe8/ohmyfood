@@ -10,21 +10,10 @@
     opacity: 0.9;
     background-color: $color-white;
     animation: fade;
-    animation-duration: 0s;
     animation-delay: 3s;
     animation-fill-mode: forwards;
 
-    @keyframes fade {
-        from {
-            opacity:1;
-            display: block;
-        }
-        to {
-            opacity:0;
-            z-index:-100;
-            display:none;
-        }
-    }
+    
 
 .loader-logo {
     display: flex;   
@@ -37,25 +26,11 @@
         animation-iteration-count: infinite;
     }
 
-    // increase the animation delay by 0.1s for the next letter (&__letter:nth-child(..))
-    @for $i from 1 to 9 {
-        .loader__letter:nth-child(#{$i}) { animation-delay: $i * 0.1s; }
-    }
-
-    @keyframes bounce {
-        0% {
-            transform: translateY(0px)
-        }
-        40% {
-            transform: translateY(-40px);
-        }
-        100% {
-            transform: translateY(0px);
-        }
-    }
+    // increase the animation delay by 0.1s for the next letter
+    @include for-delay (1, 9, 0.1s); 
     
     &__spinner {
-        animation: rotate 1.5s infinite linear;
+        animation: rotate 3s infinite linear;
         position: relative;
         border-radius: 50%;
         background: white;
@@ -83,12 +58,6 @@
         width: 60px;
         height: 60px;
         background: white;
-        }
-    }
-    
-    @keyframes spin {
-        100% {
-        transform: spin(360deg);
         }
     }
 }

@@ -24,7 +24,7 @@
     }
 }
 
-.operating {
+.operation {
     @include padding-block;
     display: flex;
     flex-direction: column;
@@ -37,20 +37,20 @@
             grid-template-columns: repeat(3, 1fr);
         }
     }
+}
 
-    article {
-        position: relative;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        background-color: $bg-section;
-        padding: 30px 30px;
-        gap: 20px;
-        border-radius: 20px;
-        @include shadow;
-    }
+.step {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: $bg-section;
+    padding: 30px 30px;
+    gap: 20px;
+    border-radius: 20px;
+    @include shadow;
 
-    span {
+    &__counter {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -64,7 +64,7 @@
         color: $color-white;
     }
 
-    i {
+    &__icon {
         color: $color-icon;
         font-size: 20px;
     }
@@ -91,7 +91,9 @@
     border-radius: 20px;
     gap: 20px;
     @include shadow;
-    @include hover-card;
+    &:hover {
+        box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2);
+    }
 }
 
 .img-restaurant {
@@ -102,7 +104,10 @@
         height: 175px;
         width: 100%;
         border-radius: 20px 20px 0 0;
-        @include img-zoom;
+        transition: 1s;
+        &:hover {                 // mixin ou map
+            transform: scale(1.1);
+        }
     }
 }
 
