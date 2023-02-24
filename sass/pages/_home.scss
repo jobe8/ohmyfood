@@ -1,6 +1,5 @@
 .location {
-    display: flex;
-    justify-content: center;
+    @include flex-center;
     background-color: $bg-location;
     gap: 10px;
     padding: 15px 0;
@@ -8,11 +7,8 @@
 
 .presentation {
     @include padding-block;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    @include flex-center;
+    @include flex-column;
     background-color: $bg-section;
     
     &__title {
@@ -26,8 +22,7 @@
 
 .operation {
     @include padding-block;
-    display: flex;
-    flex-direction: column;
+    @include flex-column;
     gap: 30px;
 
     ol {
@@ -36,7 +31,7 @@
         gap: 30px;
         counter-reset: step;
         @include tablet {
-            grid-template-columns: repeat(3, 1fr);
+            @include grid-3-columns;
         }
     }
 
@@ -45,11 +40,9 @@
         padding: 30px;
         flex-grow: 1;
         border-radius: 20px;
-        @include shadow;
-        list-style: none;
         position: relative;
-        display: flex;
-        flex-direction: row;
+        @include shadow;
+        @include flex-row;
         align-items: center;
         &::before {
             content: counter(step);
@@ -63,13 +56,13 @@
             left: -15px;
             width: 10px;
             height: 10px;
-            color: white;
+            color: $color-white;
         }
         &:hover {
             background-color: lighten($color-primary, 35%);
             //faire function comme dans cours
             i {
-                color: $color-primary
+                color: $color-primary;
             }
         }
     }
@@ -87,59 +80,57 @@
 .restaurants {
     background-color: $bg-section;
     @include padding-block;
-    display: flex;
-    flex-direction: column;
+    @include flex-column;
     gap: 30px;
 
     &__list {
         display: grid;
         gap: 20px;
         @include tablet {
-            grid-template-columns: repeat(2, 1fr);
+            @include grid-2-columns;
         }
     }
 
-}
-
-.card {
-    border-radius: 20px;
-    gap: 20px;
-    @include shadow;
-    &:hover {
-        box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2);
+    &__card {
+        border-radius: 20px;
+        gap: 20px;
+        @include shadow;
+        &:hover {
+            box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2);
+        }
     }
-}
 
-.img-restaurant {
-    position: relative;
-    overflow: hidden; // img-zoom
+    &__img-card {
+        position: relative;
+        overflow: hidden; // img-zoom
+    }
 
     img {
         height: 175px;
         width: 100%;
         border-radius: 20px 20px 0 0;
-        transition: 1s;
-        &:hover {                 // mixin ou map
-            transform: scale(1.1);
+        @include transition;
+        &:hover {
+            @include grow;
         }
     }
-}
 
-.new {
-    color: darken($color-tertiary, 50%);
-    background-color: $color-tertiary;
-    padding: 9px 12px;
-    position: absolute;
-    top: 15px;
-    right: 16px;
-    border-radius: 5px;
-}
+    &__new {
+        color: darken($color-tertiary, 50%);
+        background-color: $color-tertiary;
+        padding: 9px 12px;
+        position: absolute;
+        top: 15px;
+        right: 16px;
+        border-radius: 5px;
+    }
 
-.description {
-    padding: 15px;
-    position: relative; 
-    display: flex;
-    justify-content: space-between;
+    &__description {
+        padding: 15px;
+        position: relative; 
+        display: flex;
+        justify-content: space-between;
+    }
 
     &__btn {
         position: absolute;

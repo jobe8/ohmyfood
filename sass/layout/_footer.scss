@@ -1,44 +1,39 @@
-footer {
+.footer {
     background-color: $bg-footer;
     padding: 30px; 
     color: $color-white;
-    @media (min-width: 769px) {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+    @include tablet{
+        @include flex-column;
+        @include flex-center;
     }
 
-    .logo-footer {
+    &__logo {
         margin-bottom: 20px;
     }
-        .footer-list {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            @include tablet {
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: center;
-                gap: 40px;
-                padding: 15px 50px; /* maps ou autre blocs */
-            }
-            &__item {
-                display: flex;
-                flex-direction: row;
-                &:hover {
-                    color: $color-secondary;
-                }
-            }
 
-                &__icon-item {
-                    display: flex;
-                    align-items: center;
-                    gap: 10px;
-                }
-
-                .hands i {
-                    font-size: 11px;
-                }
+    &__list {
+        @include flex-column;
+        gap: 10px;
+        @include tablet {
+            @include flex-row;
+            gap: 40px;
+            padding: 15px 50px;
         }
+    }
+
+    &__item {
+        @include flex-row;
+        &:hover {
+            color: $color-secondary;
+        }
+    }
+
+    &__icon-item {
+        @include flex-center;
+        gap: 10px;
+    }
+
+    .hands i {
+        font-size: 11px;
+    }
 }

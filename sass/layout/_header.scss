@@ -1,13 +1,10 @@
 .navbar {
-  text-align: center;
   padding: 15px 20px;
-  @include shadow;       
   position: relative; /* for shadow bottom */
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include shadow;       
+  @include flex-center;
   @include tablet {
-    padding: 15px 50px; /* maps ou autre blocs */
+    padding: 15px 50px;
   }
 
   &__logo {
@@ -18,10 +15,10 @@
 
   &__arrow {
     font-size: 20px;
-    transition: 0.5s ease-in-out;
+    @include transition;
     &:hover {
-      opacity: 1;     // mixin ou map
-      transform: scale(1.2);
+      opacity: 1;  
+      @include grow;
     }
   }
 }

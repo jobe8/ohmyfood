@@ -1,98 +1,104 @@
-.cover {
-    width: 100%;
-    height: 30vh;
-    padding: 0;
-    border-radius: 0;
-    @include tablet {
-        height: 40vh;
-    }
-    @include desktop {
-        height: 50vh;
-    }
-}
-
-.menu {
-    position: relative;
-    margin-top: -30px;
-    border-radius: 30px 30px 0 0;
-    padding: 30px 15px;
-    background-color: $bg-section;
-    @include tablet {
-        @include padding-block;
-    }
-}
-
-.heading {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 10px;
-    margin-bottom: 30px;
-
-    // btn-like
-    i {
-        top: 35px;
-        right: 50px;
+.menu { 
+    &__cover {
+        width: 100%;
+        height: 30vh;
+        padding: 0;
+        border-radius: 0;
         @include tablet {
-            right: 80px;
+            height: 40vh;
         }
     }
-}
-
-.menu-content {
-    display: grid;
-    gap: 30px;
-    margin-bottom: 40px;
-    @include for-delay (1, 3, 0.5s); // appear animation delay for each menu-group
-    @include desktop {
-        grid-template-columns: repeat(3, 1fr);
+    
+    &__card {
+        position: relative;
+        margin-top: -30px;
+        border-radius: 30px 30px 0 0;
+        padding: 30px 15px;
+        background-color: $bg-section;
+        @include tablet {
+            @include padding-block;
+        }
     }
-}
 
-.menu-group {
-    animation: appear 1500ms both;
-}
-
-.menu-group__title {
-    margin-bottom: 10px;
-
-    &:after {
-        content: "";
-        display: block; 
-        width: 40px;
-        padding-top: 2px;
-        border-bottom: 4px solid $color-tertiary;
+    &__heading {
+        @include flex-row;
+        justify-content: space-between;
+        gap: 10px;
+        margin-bottom: 30px;
+    
+        // btn-like
+        i {
+            top: 40px;
+            right: 50px;
+            @include tablet {
+                top: 50px;
+                right: 80px;
+            }
+        }
     }
-}
 
-.list-item {
-    display: grid;
-    gap: 10px;
-}
+    &__content {
+        display: grid;
+        gap: 30px;
+        margin-bottom: 40px;
+        @include for-delay (1, 3, 0.5s); // appear animation delay for each menu-group
+        @include desktop {
+            @include grid-3-columns;
+        }
+    }
 
-.menu-item {
-    display: flex;
-    justify-content: space-between;
-    overflow: hidden; /* check button */
-    border-radius: 10px;
-    background-color: $color-white;
-    @include shadow;
+    &__group {
+        animation: appear 1500ms both;
+    }
 
-    &__left {
+    &__group-title {
+        margin-bottom: 10px;
+    
+        &:after {
+            content: "";
+            display: block; 
+            width: 40px;
+            padding-top: 2px;
+            border-bottom: 4px solid $color-tertiary;
+        }
+    }
+
+    &__list-item {
+        display: grid;
+        gap: 10px;
+    }
+
+    &__item {
+        display: flex;
+        justify-content: space-between;
+        overflow: hidden; /* check button */
+        border-radius: 10px;
+        background-color: $color-white;
+        @include shadow;
+
+        &:hover .menu__check {
+            margin-right: 0;
+            i {
+                animation: rotate 0.5s ease-in;
+            }
+        }
+    }
+
+    &__item-left {
         padding: 10px;
         min-width: 0;
     }
 
-    &__name {
+    &__item-name {
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
         @include tablet {
-            grid-template-columns: repeat(3, 1fr);
+            @include grid-3-columns;
         }
     }
 
-    &__right {
+    &__item-right {
         display: flex;
         gap: 10px;
     }
@@ -103,18 +109,9 @@
         padding: 10px;
         font-weight: bold;
     }
-
-    &:hover .menu-item__check {
-        margin-right: 0;
-        i {
-            animation: rotate 0.5s ease-in;
-        }
+    
+    .btn-order {
+        @include flex-center;
+        margin-bottom: 10px;
     }
-}
-
-.order {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 10px;
 }

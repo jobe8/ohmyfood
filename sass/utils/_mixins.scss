@@ -1,6 +1,6 @@
 @mixin shadow {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
+    transition: 0.5s;
 }
 
 @mixin padding-block {
@@ -13,12 +13,62 @@
 @mixin gradient {
     background: linear-gradient($color-secondary, $color-primary);
 }
-    
-    
+ 
+ 
+// for animation elements with delay
 @mixin for-delay ($number1, $number2, $delay){
     @for $i from $number1 through $number2 {
         :nth-child(#{$i}){
             animation-delay: $i * $delay; 
         }
+    }
+}
+
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+@mixin grid-3-columns {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+@mixin grid-2-columns {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+
+@mixin transition ($transition...) {
+    transition: 0.5s;
+}
+
+@mixin grow {
+    transform: scale(1.1);
+}
+
+// breakpoints
+@mixin tablet 
+{
+    @media screen and (min-width: map-get($breakpoints, tablet)) {
+        @content;
+    }
+}
+
+@mixin desktop
+{
+    @media screen and (min-width: map-get($breakpoints, desktop)) {
+        @content;
     }
 }
