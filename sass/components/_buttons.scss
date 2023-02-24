@@ -14,12 +14,12 @@ button {
     background: $color-gradient;    
     color: $color-white;
     font-size: 15px;
-    transition: 0.5s;
+    transition: 0.5s; //map 
     &:hover {
-        transform: scale(1.1);
+        transform: scale(1.1); // map ou mixin tous les transform
         background: linear-gradient(
-            lighten(($color-secondary), 5%) 0%,
-            lighten(($color-primary), 5%) 100%
+            lighten(($color-secondary), 5%),
+            lighten(($color-primary), 5%)
         );
         filter: drop-shadow(0 6px 8px rgba(0,0,0,0.3));
     }
@@ -53,7 +53,7 @@ button {
     border-radius: 0 10px 10px 0;
     font-size: 25px;
     margin-right: -60px;
-    transition: 0.5s;
+    transition: 0.5s; // map
      &:focus {
          background-color: $color-white;
          color: $color-tertiary;

@@ -30,43 +30,57 @@
     flex-direction: column;
     gap: 30px;
 
-    &__list {
+    ol {
         display: grid;
+        flex-wrap: wrap;
         gap: 30px;
+        counter-reset: step;
         @include tablet {
             grid-template-columns: repeat(3, 1fr);
         }
     }
-}
 
-.step {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    background-color: $bg-section;
-    padding: 30px 30px;
-    gap: 20px;
-    border-radius: 20px;
-    @include shadow;
-
-    &__counter {
+    li {
+        background-color: $bg-section;
+        padding: 30px;
+        flex-grow: 1;
+        border-radius: 20px;
+        @include shadow;
+        list-style: none;
+        position: relative;
         display: flex;
-        justify-content: center;
+        flex-direction: row;
         align-items: center;
-        background: $color-primary;
-        border-radius: 50%;
-        border: 2px solid $color-primary;
-        width: 25px;
-        height: 25px;
-        position: absolute;
-        left: -15px;
-        color: $color-white;
+        &::before {
+            content: counter(step);
+            counter-increment: step;
+            background-color: $color-primary;
+            border-radius: 50%;
+            padding: 10px;
+            position: absolute;
+            display: flex;
+            align-items: center;
+            left: -15px;
+            width: 10px;
+            height: 10px;
+            color: white;
+        }
+        &:hover {
+            background-color: lighten($color-primary, 35%);
+            //faire function comme dans cours
+            i {
+                color: $color-primary
+            }
+        }
     }
 
-    &__icon {
+    i { 
         color: $color-icon;
         font-size: 20px;
+        margin: 0 15px;
+        @include tablet {
+            margin-left: 5px;
+        }
     }
 }
 
@@ -98,7 +112,7 @@
 
 .img-restaurant {
     position: relative;
-    overflow: hidden;
+    overflow: hidden; // img-zoom
 
     img {
         height: 175px;

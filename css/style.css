@@ -14,10 +14,6 @@ a {
   color: inherit;
 }
 
-li {
-  list-style: none;
-}
-
 img {
   object-fit: cover;
 }
@@ -165,7 +161,7 @@ button {
 }
 .main-btn:hover {
   transform: scale(1.1);
-  background: linear-gradient(#ff93e1 0%, #a16be0 100%);
+  background: linear-gradient(#ff93e1, #a16be0);
   filter: drop-shadow(0 6px 8px rgba(0, 0, 0, 0.3));
 }
 
@@ -233,7 +229,6 @@ footer {
   background-color: #353535;
   padding: 30px;
   color: #ffffff;
-  /* faire fonction pour si bg est sombre mettre couleur blanc comme dans cours oc */
 }
 @media (min-width: 769px) {
   footer {
@@ -255,6 +250,7 @@ footer .footer-list {
   footer .footer-list {
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     gap: 40px;
     padding: 15px 50px; /* maps ou autre blocs */
   }
@@ -281,6 +277,16 @@ footer .footer-list .hands i {
   padding: 0;
   border-radius: 0;
 }
+@media screen and (min-width: 769px) {
+  .cover {
+    height: 40vh;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .cover {
+    height: 50vh;
+  }
+}
 
 .menu {
   position: relative;
@@ -296,7 +302,7 @@ footer .footer-list .hands i {
 }
 @media screen and (min-width: 769px) and (min-width: 769px) {
   .menu {
-    padding: 50px 80px;
+    padding: 50px 50px;
   }
 }
 
@@ -423,7 +429,7 @@ footer .footer-list .hands i {
 }
 @media screen and (min-width: 769px) {
   .presentation {
-    padding: 50px 80px;
+    padding: 50px 50px;
   }
 }
 .presentation__title {
@@ -441,47 +447,62 @@ footer .footer-list .hands i {
 }
 @media screen and (min-width: 769px) {
   .operation {
-    padding: 50px 80px;
+    padding: 50px 50px;
   }
 }
-.operation__list {
+.operation ol {
   display: grid;
+  flex-wrap: wrap;
   gap: 30px;
+  counter-reset: step;
 }
 @media screen and (min-width: 769px) {
-  .operation__list {
+  .operation ol {
     grid-template-columns: repeat(3, 1fr);
   }
 }
-
-.step {
+.operation li {
+  background-color: #F7F7F7;
+  padding: 30px;
+  flex-grow: 1;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  list-style: none;
   position: relative;
   display: flex;
   flex-direction: row;
   align-items: center;
-  background-color: #F7F7F7;
-  padding: 30px 30px;
-  gap: 20px;
-  border-radius: 20px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  transition: 0.3s;
 }
-.step__counter {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #9356DC;
+.operation li::before {
+  content: counter(step);
+  counter-increment: step;
+  background-color: #9356DC;
   border-radius: 50%;
-  border: 2px solid #9356DC;
-  width: 25px;
-  height: 25px;
+  padding: 10px;
   position: absolute;
+  display: flex;
+  align-items: center;
   left: -15px;
-  color: #ffffff;
+  width: 10px;
+  height: 10px;
+  color: white;
 }
-.step__icon {
+.operation li:hover {
+  background-color: #f2eafb;
+}
+.operation li:hover i {
+  color: #9356DC;
+}
+.operation i {
   color: #6b6b6b;
   font-size: 20px;
+  margin: 0 15px;
+}
+@media screen and (min-width: 769px) {
+  .operation i {
+    margin-left: 5px;
+  }
 }
 
 .restaurants {
@@ -493,7 +514,7 @@ footer .footer-list .hands i {
 }
 @media screen and (min-width: 769px) {
   .restaurants {
-    padding: 50px 80px;
+    padding: 50px 50px;
   }
 }
 .restaurants__list {
