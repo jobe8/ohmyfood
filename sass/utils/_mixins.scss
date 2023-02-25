@@ -6,7 +6,7 @@
 @mixin padding-block {
     padding: 50px 30px;
     @include tablet {
-        padding: 50px 50px;
+        padding: 50px 80px;
     }
 }
 

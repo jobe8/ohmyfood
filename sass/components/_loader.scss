@@ -28,7 +28,7 @@
         animation: rotate 3s infinite linear;
         position: relative;
         border-radius: 50%;
-        background: white;
+        background: $color-white;
         background-image: 
         linear-gradient(
             25deg,
@@ -52,7 +52,7 @@
         margin: 10px auto;
         width: 60px;
         height: 60px;
-        background: white;
+        background: $color-white;
         }
     }
 }

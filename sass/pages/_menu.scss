@@ -23,13 +23,14 @@
     &__heading {
         @include flex-row;
         justify-content: space-between;
-        gap: 10px;
-        margin-bottom: 30px;
-    
-        // btn-like
+        gap: 50px;
+        margin-bottom: 30px;        
+    }
+
+    &__heart {
         i {
             top: 40px;
-            right: 50px;
+            right: 30px;
             @include tablet {
                 top: 50px;
                 right: 80px;
@@ -110,7 +111,7 @@
         font-weight: bold;
     }
     
-    .btn-order {
+    &__btn-order {
         @include flex-center;
         margin-bottom: 10px;
     }

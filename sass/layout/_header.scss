@@ -1,16 +1,18 @@
 .navbar {
   padding: 15px 20px;
   position: relative; /* for shadow bottom */
-  @include shadow;       
-  @include flex-center;
+  @include shadow;
+  display: flex;       
+  align-items: center;
   @include tablet {
-    padding: 15px 50px;
+    padding: 15px 80px;
   }
 
   &__logo {
-    flex-grow: 1;
-    text-align: center;
-    font-size: 30px;
+    width: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    color: $color-white;
   }
 
   &__arrow {

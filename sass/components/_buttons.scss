@@ -37,7 +37,7 @@ button {
         color: transparent;
         background-image: $color-gradient;
         opacity: 0;
-        @include transition;
+        @include transition (ease-in-out);
         &:hover {
             opacity: 1;
             @include grow;

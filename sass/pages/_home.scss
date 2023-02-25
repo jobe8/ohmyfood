@@ -8,6 +8,7 @@
 .presentation {
     @include padding-block;
     @include flex-center;
+    text-align: center;
     @include flex-column;
     background-color: $bg-section;
     
@@ -102,17 +103,12 @@
 
     &__img-card {
         position: relative;
-        overflow: hidden; // img-zoom
     }
 
     img {
         height: 175px;
         width: 100%;
         border-radius: 20px 20px 0 0;
-        @include transition;
-        &:hover {
-            @include grow;
-        }
     }
 
     &__new {
@@ -132,7 +128,7 @@
         justify-content: space-between;
     }
 
-    &__btn {
+    &__heart {
         position: absolute;
         top: 15px;
         right: 50px;
