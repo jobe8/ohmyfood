@@ -1,8 +1,6 @@
 .loader {
     @include flex-center;
-    @include flex-column;
     position: fixed;
-    gap: 30px;
     inset: 0;
     z-index: 99;
     opacity: 0.9;
@@ -10,23 +8,9 @@
     animation: fade;
     animation-delay: 3s;
     animation-fill-mode: forwards;
-    // increase the animation delay by 0.1s for the next letter
-    @include for-delay (1, 9, 0.1s); 
-
-    &__logo {
-        display: flex;   
-    }
-
-    &__letter {
-        font-size: 50px;
-        letter-spacing: 5px;
-        animation: bounce;
-        animation-duration: 3s;
-        animation-iteration-count: infinite;
-    }
     
     &__spinner {
-        animation: rotate 3s infinite linear;
+        animation: rotate 1.5s infinite ease-in-out;
         position: relative;
         border-radius: 50%;
         background: $color-white;

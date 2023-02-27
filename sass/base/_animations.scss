@@ -36,19 +36,6 @@
     }
 }
 
-// loader logo jump letter
-@keyframes bounce {
-    0% {
-        transform: translateY(0px)
-    }
-    40% {
-        transform: translateY(-40px);
-    }
-    100% {
-        transform: translateY(0px);
-    }
-}
-
 // loader-spinner animation
 @keyframes spin {
     100% {
