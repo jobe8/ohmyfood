@@ -59,11 +59,6 @@ li {
     display: none;
   }
 }
-@keyframes spin {
-  100% {
-    transform: rotate(360deg);
-  }
-}
 .loader {
   display: flex;
   justify-content: center;
