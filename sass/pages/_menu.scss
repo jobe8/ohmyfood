@@ -75,6 +75,7 @@
         overflow: hidden; /* check button */
         border-radius: 10px;
         background-color: $color-white;
+        cursor: pointer;
         @include shadow;
 
         &:hover .menu__check {
