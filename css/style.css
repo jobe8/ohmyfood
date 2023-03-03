@@ -194,6 +194,7 @@ button {
 }
 .footer__logo {
   margin-bottom: 20px;
+  font-size: 18px;
 }
 .footer__list {
   display: flex;
